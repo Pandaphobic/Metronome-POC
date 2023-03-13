@@ -3,12 +3,13 @@
 This is a simple metronome app built with Flutter. It is a work in progress and is not yet ready for anything.
 
 ### Tasks
+
 - [x] Flutter Development Environment
 - [x] Git Repo
-- [ ] Start Button
+- [x] Start Button
 - [ ] Stop Button
 - [ ] Speed Slider
-- [ ] BPM Heading
+- [x] BPM Heading
 - [ ] Sound Library
 - [ ] Interval Coding
 

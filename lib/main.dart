@@ -58,16 +58,16 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int _counter = 0;
+  double _counter = 0;
 
-  void _incrementCounter() {
+  bool _isPlaying = false;
+
+  String _buttonText = 'Start';
+
+  void isPlaying() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      _isPlaying = !_isPlaying;
+      _buttonText = _isPlaying ? 'Stop' : 'Start';
     });
   }
 
@@ -81,15 +81,25 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(
-            '$_counter bpm',
+            '${_counter.round().toString()} bpm',
             style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          Slider(
+            value: _counter,
+            max: 250,
+            label: _counter.round().toString(),
+            onChanged: (double value) {
+              setState(() {
+                _counter = value;
+              });
+            },
           ),
           const SizedBox(height: 30),
           ElevatedButton(
             style: style,
-            onPressed: _incrementCounter,
+            onPressed: isPlaying,
             // tooltip: 'Increment',
-            child: const Text('Start'),
+            child: Text(_buttonText),
           ),
         ],
       ),
