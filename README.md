@@ -1,8 +1,18 @@
-# metronome_mvp
+# Flutter Metronome MVP
 
-A new Flutter project.
+This is a simple metronome app built with Flutter. It is a work in progress and is not yet ready for anything.
 
-## Getting Started
+### Tasks
+- [x] Flutter Development Environment
+- [x] Git Repo
+- [ ] Start Button
+- [ ] Stop Button
+- [ ] Speed Slider
+- [ ] BPM Heading
+- [ ] Sound Library
+- [ ] Interval Coding
+
+### Getting Started
 
 This project is a starting point for a Flutter application.
 
